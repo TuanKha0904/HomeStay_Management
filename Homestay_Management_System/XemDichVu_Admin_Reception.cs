@@ -39,11 +39,10 @@ namespace Homestay_Management_System
 
         private void dtg_DichVu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                txt_TenDV.Text = dtg_DichVu.CurrentRow.Cells["Ten_DV"].Value.ToString();
-                txt_GiaDV.Text = dtg_DichVu.CurrentRow.Cells["Gia_DV"].Value.ToString();
-            }
+            int vt = e.RowIndex;
+            DataGridViewRow chon = this.dtg_DichVu.Rows[vt];
+            txt_TenDV.Text = chon.Cells[1].Value.ToString();
+            txt_GiaDV.Text = chon.Cells[2].Value.ToString();
         }
 
         private void txt_GiaDV_KeyPress(object sender, KeyPressEventArgs e)
@@ -60,7 +59,7 @@ namespace Homestay_Management_System
             {
                 conn.Open();
             }
-            SqlCommand cmd = new SqlCommand("INSERT INTO DICH_VU VALUES(N'" + txt_TenDV.Text + "', " + float.Parse(txt_GiaDV.Text) + "')", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO DICH_VU VALUES (N'" + txt_TenDV.Text + "', " + float.Parse(txt_GiaDV.Text) + ")", conn);
             int count = cmd.ExecuteNonQuery();
             if (count > 0)
             {
@@ -73,6 +72,48 @@ namespace Homestay_Management_System
             }
             else
                 MessageBox.Show("Không thể thêm mới", "Thông báo");
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa dòng hiện tại không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+                int MaDV = (int)dtg_DichVu.CurrentRow.Cells[0].Value;
+                SqlCommand cmd = new SqlCommand("DELETE DICH_VU WHERE Ma_DV = " + MaDV, conn);
+                int count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                {
+                    DataRowView row = (DataRowView)bs.Current;
+                    row.Delete();
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
+                }
+                else
+                    MessageBox.Show("Không thể xóa dòng ghi hiện thời", "Thông báo", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            if (conn.State == ConnectionState.Closed)
+                conn.Open();
+            int MaDV = (int)dtg_DichVu.CurrentRow.Cells[0].Value;
+            string query = string.Format("UPDATE DICH_VU SET Ten_DV = N'{0}', Gia_DV = {1} WHERE Ma_DV = '{2}'", txt_TenDV.Text, float.Parse(txt_GiaDV.Text), MaDV);
+            SqlCommand cmd = new SqlCommand(query, conn);
+            int count = cmd.ExecuteNonQuery();
+            if (count > 0)
+            {
+                DataRowView row = (DataRowView)bs.Current;
+                row[1] = txt_TenDV.Text;
+                row[2] = txt_GiaDV.Text;
+                bs.ResetCurrentItem();
+                MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+                MessageBox.Show("Không sửa được !", "Thông báo", MessageBoxButtons.OK);
         }
     }
 }
