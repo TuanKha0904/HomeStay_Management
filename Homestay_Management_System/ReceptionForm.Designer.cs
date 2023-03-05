@@ -92,6 +92,7 @@
             this.btn_XemDichVu.Padding = new System.Windows.Forms.Padding(5);
             this.btn_XemDichVu.Size = new System.Drawing.Size(125, 46);
             this.btn_XemDichVu.Text = "Xem Dịch Vụ";
+            this.btn_XemDichVu.Click += new System.EventHandler(this.btn_XemDichVu_Click);
             // 
             // btn_KhachDatPhong
             // 

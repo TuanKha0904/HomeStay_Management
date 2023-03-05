@@ -46,6 +46,14 @@ namespace Homestay_Management_System
             HS.Show();
         }
 
+        private void btn_XemDichVu_Click(object sender, EventArgs e)
+        {
+            frm_XemDichVu_Admin_Reception XDV = new frm_XemDichVu_Admin_Reception();
+            XDV.TopLevel = false;
+            pnl_Forms.Controls.Add(XDV);
+            XDV.Show();
+        }
+
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
             DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);

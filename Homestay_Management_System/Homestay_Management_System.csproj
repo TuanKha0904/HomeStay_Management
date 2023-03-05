@@ -101,6 +101,12 @@
     <Compile Include="XemDichVu.Designer.cs">
       <DependentUpon>XemDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="XemDichVu_Admin_Reception.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XemDichVu_Admin_Reception.Designer.cs">
+      <DependentUpon>XemDichVu_Admin_Reception.cs</DependentUpon>
+    </Compile>
     <Compile Include="XemPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XemDichVu.resx">
       <DependentUpon>XemDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XemDichVu_Admin_Reception.resx">
+      <DependentUpon>XemDichVu_Admin_Reception.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XemPhong.resx">
       <DependentUpon>XemPhong.cs</DependentUpon>
