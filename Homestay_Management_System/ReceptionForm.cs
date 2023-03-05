@@ -56,6 +56,14 @@ namespace Homestay_Management_System
             XDV.Show();
         }
 
+        private void btn_KhachDatPhong_Click(object sender, EventArgs e)
+        {
+            frm_DatPhong DP = new frm_DatPhong();
+            DP.TopLevel = false;
+            pnl_Forms.Controls.Add(DP);
+            DP.Show();
+        }
+
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
             DialogResult dlr = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);

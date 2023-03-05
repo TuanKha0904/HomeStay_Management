@@ -105,6 +105,7 @@
             this.btn_KhachDatPhong.Padding = new System.Windows.Forms.Padding(5);
             this.btn_KhachDatPhong.Size = new System.Drawing.Size(147, 46);
             this.btn_KhachDatPhong.Text = "Khách đặt phòng";
+            this.btn_KhachDatPhong.Click += new System.EventHandler(this.btn_KhachDatPhong_Click);
             // 
             // btn_DangXuat
             // 
