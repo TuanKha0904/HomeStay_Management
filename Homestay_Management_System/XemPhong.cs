@@ -34,6 +34,7 @@ namespace Homestay_Management_System
             this.ten_PhongTextBox.Enabled = false;
             this.loai_PhongTextBox.Enabled = false;
             this.gia_PhongTextBox.Enabled = false;
+            
             // TODO: This line of code loads data into the 'hOMESTAY_MANAGEMENTDataSet.PHONG' table. You can move, or remove it, as needed.
             this.pHONGTableAdapter.Fill(this.hOMESTAY_MANAGEMENTDataSet.PHONG);
         }
@@ -52,20 +53,22 @@ namespace Homestay_Management_System
                     string Ten_Phong = selectedRow.Cells[1].Value.ToString();
                     string Loai_Phong = selectedRow.Cells[2].Value.ToString();
                     string Gia_Phong = selectedRow.Cells[3].Value.ToString();
-
+                   
                     // Hiển thị thông tin trong các hộp văn bản
                     ma_PhongTextBox.Text = Ma_Phong;
                     ten_PhongTextBox.Text = Ten_Phong;
                     loai_PhongTextBox.Text = Loai_Phong;
                     gia_PhongTextBox.Text = Gia_Phong;
+                  
 
                     // Kích hoạt sửa thông tin
                     this.ten_PhongTextBox.Enabled = true;
                     this.loai_PhongTextBox.Enabled = true;
-                    this.gia_PhongTextBox.Enabled = true;
+                    this.gia_PhongTextBox.Enabled = true;                     
                     this.loai_PhongTextBox.BackColor = Color.White;
                     this.ten_PhongTextBox.BackColor = Color.White;
                     this.gia_PhongTextBox.BackColor = Color.White;
+                     
                 }
                 catch (Exception ex)
                 {
@@ -96,7 +99,11 @@ namespace Homestay_Management_System
 
         private void btn_Luu_Click(object sender, EventArgs e)
         {
-            string connect = global::Homestay_Management_System.Properties.Settings.Default.HOMESTAY_MANAGEMENTConnectionString;
+            if (pHONGDataGridView.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    string connect = global::Homestay_Management_System.Properties.Settings.Default.HOMESTAY_MANAGEMENTConnectionString;
             int index = pHONGDataGridView.CurrentCell.RowIndex;
             string Ma_Phong = pHONGDataGridView.Rows[index].Cells[0].Value.ToString();
             string query = string.Format("UPDATE PHONG SET Loai_Phong = N'{0}', Ten_Phong = '{1}', Gia_Phong = '{2}' WHERE Ma_Phong = '{3}'", loai_PhongTextBox.Text, ten_PhongTextBox.Text, gia_PhongTextBox.Text, Ma_Phong);
@@ -113,6 +120,17 @@ namespace Homestay_Management_System
             this.loai_PhongTextBox.Enabled = false;
             this.gia_PhongTextBox.Enabled = false;
             this.ma_PhongTextBox.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý ngoại lệ nếu có
+                    MessageBox.Show("Lỗi khi tải thông tin phòng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng để lưu!!!");
+            }
 
         }
 
@@ -155,10 +173,12 @@ namespace Homestay_Management_System
             this.ten_PhongTextBox.BackColor = Color.White;
             this.gia_PhongTextBox.BackColor = Color.White;
             this.ma_PhongTextBox.BackColor = Color.White;
+             
             this.ten_PhongTextBox.Enabled = true;
             this.loai_PhongTextBox.Enabled = true;
             this.gia_PhongTextBox.Enabled = true;
             this.ma_PhongTextBox.Enabled = true;
+             
         }
 
         private void btn_SaveImage_Click(object sender, EventArgs e)
@@ -194,9 +214,10 @@ namespace Homestay_Management_System
                     cmd1.ExecuteNonQuery();
                     conn.Close();
                 }
+                LoadDataIntoDataGridView();
             }
         }
-        
 
+       
     }
 }

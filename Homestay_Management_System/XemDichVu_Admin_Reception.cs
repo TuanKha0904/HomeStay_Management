@@ -55,7 +55,7 @@ namespace Homestay_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (conn.State == ConnectionState.Closed) 
+            if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
             }
@@ -73,7 +73,6 @@ namespace Homestay_Management_System
             else
                 MessageBox.Show("Không thể thêm mới", "Thông báo");
         }
-
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn xóa dòng hiện tại không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

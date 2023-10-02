@@ -37,7 +37,6 @@
             this.btn_QuanLiHoaDon = new System.Windows.Forms.ToolStripButton();
             this.btn_DoanhThu = new System.Windows.Forms.ToolStripButton();
             this.btn_NhanVien = new System.Windows.Forms.ToolStripButton();
-            this.btn_KhachHang = new System.Windows.Forms.ToolStripButton();
             this.pnl_Forms = new System.Windows.Forms.Panel();
             this.Menu_Bar.SuspendLayout();
             this.SuspendLayout();
@@ -54,13 +53,13 @@
             this.btn_HoSo,
             this.btn_QuanLiHoaDon,
             this.btn_DoanhThu,
-            this.btn_NhanVien,
-            this.btn_KhachHang});
+            this.btn_NhanVien});
             this.Menu_Bar.Location = new System.Drawing.Point(0, 0);
             this.Menu_Bar.Name = "Menu_Bar";
+            this.Menu_Bar.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.Menu_Bar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.Menu_Bar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Menu_Bar.Size = new System.Drawing.Size(978, 46);
+            this.Menu_Bar.Size = new System.Drawing.Size(1467, 46);
             this.Menu_Bar.Stretch = true;
             this.Menu_Bar.TabIndex = 4;
             // 
@@ -75,7 +74,7 @@
             this.btn_XemPhong.Margin = new System.Windows.Forms.Padding(0);
             this.btn_XemPhong.Name = "btn_XemPhong";
             this.btn_XemPhong.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_XemPhong.Size = new System.Drawing.Size(117, 46);
+            this.btn_XemPhong.Size = new System.Drawing.Size(156, 46);
             this.btn_XemPhong.Text = "Xem Phòng";
             this.btn_XemPhong.Click += new System.EventHandler(this.btn_XemPhong_Click);
             // 
@@ -88,7 +87,7 @@
             this.btn_XemDichVu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_XemDichVu.Name = "btn_XemDichVu";
             this.btn_XemDichVu.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_XemDichVu.Size = new System.Drawing.Size(125, 46);
+            this.btn_XemDichVu.Size = new System.Drawing.Size(167, 46);
             this.btn_XemDichVu.Text = "Xem Dịch Vụ";
             this.btn_XemDichVu.Click += new System.EventHandler(this.btn_XemDichVu_Click);
             // 
@@ -117,7 +116,7 @@
             this.btn_HoSo.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.btn_HoSo.Name = "btn_HoSo";
             this.btn_HoSo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_HoSo.Size = new System.Drawing.Size(75, 46);
+            this.btn_HoSo.Size = new System.Drawing.Size(97, 46);
             this.btn_HoSo.Text = "Hồ sơ";
             this.btn_HoSo.Click += new System.EventHandler(this.btn_HoSo_Click);
             // 
@@ -129,7 +128,7 @@
             this.btn_QuanLiHoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_QuanLiHoaDon.Margin = new System.Windows.Forms.Padding(0);
             this.btn_QuanLiHoaDon.Name = "btn_QuanLiHoaDon";
-            this.btn_QuanLiHoaDon.Size = new System.Drawing.Size(130, 46);
+            this.btn_QuanLiHoaDon.Size = new System.Drawing.Size(184, 46);
             this.btn_QuanLiHoaDon.Text = "Quản lí hóa đơn";
             // 
             // btn_DoanhThu
@@ -141,7 +140,7 @@
             this.btn_DoanhThu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_DoanhThu.Name = "btn_DoanhThu";
             this.btn_DoanhThu.Padding = new System.Windows.Forms.Padding(5);
-            this.btn_DoanhThu.Size = new System.Drawing.Size(113, 46);
+            this.btn_DoanhThu.Size = new System.Drawing.Size(152, 46);
             this.btn_DoanhThu.Text = "Doanh Thu";
             // 
             // btn_NhanVien
@@ -152,38 +151,29 @@
             this.btn_NhanVien.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_NhanVien.Margin = new System.Windows.Forms.Padding(0);
             this.btn_NhanVien.Name = "btn_NhanVien";
-            this.btn_NhanVien.Size = new System.Drawing.Size(99, 46);
+            this.btn_NhanVien.Size = new System.Drawing.Size(135, 46);
             this.btn_NhanVien.Text = "Nhân viên";
-            // 
-            // btn_KhachHang
-            // 
-            this.btn_KhachHang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_KhachHang.ForeColor = System.Drawing.Color.White;
-            this.btn_KhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btn_KhachHang.Image")));
-            this.btn_KhachHang.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_KhachHang.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_KhachHang.Name = "btn_KhachHang";
-            this.btn_KhachHang.Size = new System.Drawing.Size(147, 46);
-            this.btn_KhachHang.Text = "Quản lí khách hàng";
             // 
             // pnl_Forms
             // 
             this.pnl_Forms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.pnl_Forms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Forms.Location = new System.Drawing.Point(0, 46);
+            this.pnl_Forms.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnl_Forms.Name = "pnl_Forms";
-            this.pnl_Forms.Size = new System.Drawing.Size(978, 404);
+            this.pnl_Forms.Size = new System.Drawing.Size(1467, 646);
             this.pnl_Forms.TabIndex = 6;
             // 
             // frm_AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 450);
+            this.ClientSize = new System.Drawing.Size(1467, 692);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_Forms);
             this.Controls.Add(this.Menu_Bar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_AdminForm";
@@ -207,7 +197,6 @@
         private System.Windows.Forms.ToolStripButton btn_HoSo;
         private System.Windows.Forms.ToolStripButton btn_QuanLiHoaDon;
         private System.Windows.Forms.ToolStripButton btn_NhanVien;
-        private System.Windows.Forms.ToolStripButton btn_KhachHang;
         private System.Windows.Forms.Panel pnl_Forms;
     }
 }
